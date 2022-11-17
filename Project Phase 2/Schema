@@ -1,0 +1,13 @@
+LocationType (locationTypeID PK, description)
+Location (locationID PK, xcoord, ycoord, floor, buildingName, longName, shortName, 
+    locationTypeID FK)
+Employee (employeeID PK, username UQ, password, firstName, lastName, salaryGrade, 
+    securityClerance, NPI UQ, locationID FK)
+MedicalEquipment (itemID PK, equipmentType, status, locationID FK)
+Patient (patientID PK, firstName, lastName, primaryPhone, city, state, locationID FK)
+ServiceRequest (requestID PK, role, status, requesterEmployerID FK, 
+    handlerEmployerID FK, destinationID FK)
+MedicalEquipmentRequest (requestID PK FK, role, requestType)
+Service (requestID PK, itemID PK FK)
+LabRequest (requestID PK FK, role, labTest, patientID FK)
+TransportRequest (requestID PK FK, role, patientID FK, itemID FK)
